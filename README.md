@@ -1,4 +1,4 @@
-# Ollama Chatbot
+# Ollama Basic Chatbot
 
 ## Overview
 
@@ -49,3 +49,43 @@ It causes run to automatically open a browser tab with the app running in it.
 Hyperdiv automatically finds an open port on which to run the app when HD_PORT is left unset. The port search starts and 8988 and goes upward.
 
 This environment variable is meant to be set when shipping apps that users can run locally on their computers. For example, when distributing an app on PyPI.
+
+# Development Mode
+
+These environment variables are useful when developing Hyperdiv itself, and may be useful when improving the performance of apps.
+
+### HD_DEBUG
+When set, this environment variable causes Hyperdiv to log a lot of debugging statements, useful when developing Hyperdiv itself. This output may be inscrutible to developers who aren't working on Hyperdiv itself.
+
+Automatically disabled if HD_PRODUCTION is enabled.
+
+### HD_PRINT_OUTPUT
+Causes Hyperdiv to log each message sent to the browser. Note that some of these messages can be very large. In particular, when connecting to an app, the entire dom is logged to the console.
+
+Automatically disabled if HD_DEBUG is disabled.
+
+Setting Environment Variables
+
+In bash-like shells, you can set environment variables like this:
+
+```bash
+export HD_PORT=9000
+export HD_PRODUCTION=1
+python main.py
+```
+
+Using export will set the environment variable for the rest of the terminal session, or until set again.
+
+You can also set the variable for a single execution of the app, without exporting it to the session.
+
+```bash
+HD_PORT=9000 HD_PRODUCTION=1 python main.py
+```
+
+In non-bash-like shells, you can use setenv, which works like the export command from bash-like shells:
+
+```bash
+setenv HD_PORT 9000
+setenv HD_PRODUCTION 1
+python main.py
+```
