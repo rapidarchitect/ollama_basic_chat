@@ -1,0 +1,3 @@
+requests==2.26.0
+hyperdiv==0.8.2
+ollama==1.0.0
