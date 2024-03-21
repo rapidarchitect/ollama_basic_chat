@@ -90,7 +90,7 @@ def main():
 
     task = hd.task()
 
-    template = hd.template(title="Ollama Chatbot", sidebar=False)
+    template = hd.template(title="Ollama Basic Chatbot", sidebar=False)
 
     with template.body:
         if len(state.messages) > 0:
@@ -111,7 +111,7 @@ def main():
             with hd.form(direction="horizontal", width="100%") as form:
                 with hd.box(grow=1):
                     prompt = form.text_input(
-                        placeholder="Talk to the AI",
+                        placeholder="Talk to Ollama",
                         autofocus=True,
                         disabled=task.running,
                         name="prompt",
@@ -121,6 +121,7 @@ def main():
                     options=model_list,
                     value="tinyllama",
                     name="gpt-model",
+                    placeholder='tinyllama:latest'
                 )
 
             if form.submitted:
