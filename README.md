@@ -1,5 +1,8 @@
 # Ollama Basic Chatbot
 
+[ollama_basic_cha.webm](https://github.com/rapidarchitect/ollama_basic_chat/assets/126218667/c02dd2dd-5b92-481a-a61b-1504f4e9d37f)
+
+
 ## Overview
 
 This is a simple chatbot application that utilizes the Ollama AI platform to provide conversational responses. The chatbot is built using Python and HyperDiv for the user interface.
